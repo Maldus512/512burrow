@@ -1,0 +1,37 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+  <head>
+    {% if title %}
+    <title>{{ title }}</title>
+    {% else %}
+    <title>512's burrow</title>
+    {% endif %}
+
+	<link rel="stylesheet" type="text/css" href="static/style.css" media="screen" />
+
+    <meta name="google-signin-scope" content="profile email">
+    <meta name="google-signin-client_id" content="333849030987-tjf5ejragjkeao1n9s85msl3e0gmmhuq.apps.googleusercontent.com">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <!--<img id="background" src="/static/icons/dungeon.jpg"/>-->
+    <div class="box">
+        {% include "header.html" %}
+    <div class="page_content">
+        {% with messages = get_flashed_messages() %}
+          {% if messages %}
+            <ul>
+            {% for message in messages %}
+                <li>{{ message }} </li>
+            {% endfor %}
+            </ul>
+          {% endif %}
+        {% endwith %}
+        {% block content %}{% endblock %}
+    </div>
+        {% include "footer.html" %}
+    </div>
+  </body>
+</html>

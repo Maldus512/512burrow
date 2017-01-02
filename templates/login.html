@@ -1,0 +1,25 @@
+<!-- extend from base layout -->
+{% extends "base.html" %}
+
+{% block mycontent %}
+<script type="text/javascript">
+
+function onSignIn(googleUser) {
+	var profile = googleUser.getBasicProfile()
+	console.log('ID: ' + profile.getId())
+	console.log('Name: ' + profile.getId())
+	console.log('Image URL: ' + profile.getId())
+	console.log('Email: ' + profile.getId())
+// The ID token you need to pass to your backend:
+        var id_token = googleUser.getAuthResponse().id_token;
+        console.log("ID Token: " + id_token);
+//	post('/login', {"openid":id_token.toString()});
+	$("#openid").val(id_token)
+	document.login.submit()
+	
+}
+
+</script>
+  <h1>Sign In</h1>
+  	<div class="g-signin2" data-onsuccess="onSignIn"></div>
+{% endblock %}
