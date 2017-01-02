@@ -17,6 +17,10 @@ class Auth:
 class Config:
 	WTF_CSRF_ENABLED = True
 	SECRET_KEY = 'super secret'
+        MYSQL_USER = "android"
+        MYSQL_PASSWORD = "orokg9mm"
+        MYSQL_DB = "512burrow"
+        MYSQL_HOST = "localhost"
 
 class DevConfig(Config):
 	DEBUG = True

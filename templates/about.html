@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="faqs">
+{% for faq in faqs %}
+    <div class="faq">
+        <a class="question" href="#"><span class="plusminus">+ </span>{{ faq.question }}</a>
+        <p class="answer">{{ faq.answer }}</p>
+    </div>
+{% endfor %}
+</div>
+{% endblock %}
