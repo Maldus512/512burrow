@@ -2,7 +2,7 @@ from flask import render_template, flash, redirect, url_for, session, request
 from flask_login import current_user
 from burrow512 import app, mysql
 from requests_oauthlib import OAuth2Session
-from config import Auth
+from .env.settings import Auth
 from urllib2 import HTTPError
 import json
 from .utils.auth import get_google_auth
@@ -18,7 +18,7 @@ def dictfetchall(cursor):
 @app.route('/about')
 def about():
     cur = mysql.connection.cursor()
-    cur.execute("""SELECT * FROM faqs""")
+    cur.execute("""SELECT * FROM faqs ORDER BY pos""")
     res = dictfetchall(cur)
     res.append({'question':"what?", 'answer':"this"}) 
     return render_template("about.html",

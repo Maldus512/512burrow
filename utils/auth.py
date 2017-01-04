@@ -1,5 +1,5 @@
 from requests_oauthlib import OAuth2Session
-from ..config import Auth
+from ..env.settings import Auth
 from urllib2 import HTTPError
 
 

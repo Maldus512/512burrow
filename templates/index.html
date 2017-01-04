@@ -1,4 +1,18 @@
 {% extends "base.html" %}
 {% block content %}
-<p>Message: {{ message }}</p>
+{% if message %}
+    <p class="content">Message: {{ message }}</p>
+{% endif %}
+    <div class="whoami internal block">
+        <h3>Who Am I</h3>
+        <p class="content">
+            {{ whoami }}
+        </p>
+    </div>
+    <div class="news internal block">
+        <h3>News</h3>
+        <p class="content">
+            <!--todo-->
+        </p>
+    </div>
 {% endblock %}

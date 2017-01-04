@@ -4,13 +4,15 @@ ul.navbar {
 	list-style-type: none;
 	margin: 0;
 	padding: 0;
-        height: 60px;
 	width: 100%;
+        overflow: auto;
+    font-family: "Ubuntu Mono";
+    font-size: 120%;
+    font-weight: bold;
 }
 
 html, body {
     margin: 0px;
-    height: 100%;
 }
 
 div.faq {
@@ -22,11 +24,33 @@ div.faq {
 
 p.answer {
     display: none;
+    margin-bottom: 0px;
 }
 
 body {
     background-image: url("/static/icons/dungeon.jpg");
 }
+
+div.internal {
+    border: 1px solid lightgray;
+    background-color: #232323;
+    padding: 10px;
+}
+
+div.block {
+    display: inline-block;
+}
+
+div.whoami, div.featured {
+    width: 60%;
+}
+
+div.news {
+    width: 35%;
+    top: 0px;
+}
+
+
 
 div.page_content {
     padding: 20px;
@@ -35,7 +59,6 @@ div.page_content {
     border: 1px solid lightgray;
     opacity: 0.8;
     filter: alpha(opacity=60); /* For IE8 and earlier */
-    min-height: 500px;
     font-family: "Ubuntu Mono";
 }
 
@@ -61,6 +84,12 @@ div.header, div.footer{
 div.footer {
     background-image: url('/static/icons/footer.jpg');
     background-size: 100% 100%;
+    padding: 2px;
+overflow: auto;
+}
+
+#powby {
+float: right;
 }
 
 
